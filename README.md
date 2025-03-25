@@ -105,42 +105,10 @@ Returns a dictionary. The keys are view names ("front", "back", "left", "right")
 
 Saving Images: The example code demonstrates how to save the image data from the BytesIO objects to files. The key improvement here is the use of .getvalue() to get the bytes from the BytesIO object before writing to the file.
 
-Error Handling Checks are in place to verify the return types, and print errors for easy troubleshooting.
-
-## API Reference
-
-process_obj(file_path: str) -> io.BytesIO | None
-
-Converts an OBJ file to a PNG image.
-
-file_path: Path to the OBJ file.
-
-Returns: An io.BytesIO object containing the PNG image data, or None if an error occurred.
-
-glb_to_image(file_bytes: bytes, width: int = 800, height: int = 600) -> io.BytesIO | str
-
-Converts a GLB file (provided as bytes) to a PNG image.
-
-file_bytes: The content of the GLB file as a bytes object.
-
-width: (Optional) Width of the output image. Defaults to 800.
-
-height: (Optional) Height of the output image. Defaults to 600.
-
-Returns: An io.BytesIO object containing the PNG image, or a string containing an error message.
-
-process_stl(file_path: str) -> Dict[str, Optional[bytes]]
-
-Converts an STL file to multiple PNG images (front, back, left, right views).
-
-file_path: Path to the STL file.
-
-Returns: A dictionary where keys are view names ("front", "back", "left", "right", or "error") and values are either io.BytesIO containing the image data, None if rendering that view failed, or a string if an error occurred.
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Creative Commons Attribution-NoDerivatives (CC BY-ND) License.
