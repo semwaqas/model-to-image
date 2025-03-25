@@ -9,7 +9,6 @@ version = "0.1.1"
 description = "A Python package for converting 3D files to images."
 readme = "README.md"
 authors = [{ name = "Muhammad Ateeq", email = "mr.ateeqazam@gmail.com" }]
-license = { text = "CC BY-ND" }
 dependencies = ["opencv-python", "numpy", "scipy", "scikit-learn", "pyrender", "trimesh", "matplotlib", "pyvista"]
 
 ["project.urls"]

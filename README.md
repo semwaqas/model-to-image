@@ -1,6 +1,6 @@
 # model-to-image
 
-[![PyPI version](https://badge.fury.io/py/model-to-image.svg)](https://badge.fury.io/py/model-to-image)
+[![PyPI version](https://badge.fury.io/py/3d-to-image.svg)](https://badge.fury.io/py/3d-to-image)
 
 `model-to-image` is a Python package that converts 3D models (OBJ, GLB, and STL) into 2D images. It leverages libraries like `pyrender`, `pyvista`, `trimesh`, and `matplotlib` to render and capture images from different viewpoints.  This is useful for generating previews, thumbnails, or for use in applications where 3D rendering is not feasible.
 
