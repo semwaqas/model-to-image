@@ -16,7 +16,7 @@
 ## Installation
 
 ```bash
-pip install model-to-image
+pip install 3d-to-image
 ```
 
 On Linux, the pyrender portion (GLB conversion) requires an EGL-capable system. If you encounter issues, ensure you have the necessary EGL drivers installed. You may also need to install additional system packages like libgl1-mesa-dev and libegl1-mesa-dev (on Debian/Ubuntu):
