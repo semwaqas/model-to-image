@@ -17,42 +17,31 @@
 
 ```bash
 pip install model-to-image
-
+```
 
 On Linux, the pyrender portion (GLB conversion) requires an EGL-capable system. If you encounter issues, ensure you have the necessary EGL drivers installed. You may also need to install additional system packages like libgl1-mesa-dev and libegl1-mesa-dev (on Debian/Ubuntu):
 
+```bash
 sudo apt-get update  # or your distribution's equivalent
 sudo apt-get install libgl1-mesa-dev libegl1-mesa-dev
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
 If you encounter an error involving OSError and OSMesa, install:
 
+```bash
 sudo apt-get install libosmesa6-dev
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-
+```
 And set the following environment variable prior to running:
 
+```bash
 export PYOPENGL_PLATFORM=osmesa
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-Usage
+```
+
+## Usage
 
 The package provides three main functions: process_obj, glb_to_image, and process_stl.
 
+```python
 from model_to_image import process_obj, glb_to_image, process_stl
 import io
 
@@ -90,30 +79,25 @@ else:
             with open(f"output_stl_{view}.png", "wb") as f:
                 f.write(img_bytes)
             print(f"STL {view} image saved.")
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Python
-IGNORE_WHEN_COPYING_END
+```
 
-Explanation:
+## Explanation:
 
 Import: Import the necessary functions from the model_to_image package.
 
-process_obj:
+### process_obj:
 
 Takes the path to an OBJ file as input.
 
 Returns an io.BytesIO object containing the PNG image data, or None on failure.
 
-glb_to_image:
+### glb_to_image:
 
 Takes the GLB file content as bytes (file_bytes) as input.
 
 Returns an io.BytesIO object containing the PNG image data, or a string describing the error on failure.
 
-process_stl:
+### process_stl:
 
 Takes the path to an STL file as input.
 
@@ -123,7 +107,7 @@ Saving Images: The example code demonstrates how to save the image data from the
 
 Error Handling Checks are in place to verify the return types, and print errors for easy troubleshooting.
 
-API Reference
+## API Reference
 
 process_obj(file_path: str) -> io.BytesIO | None
 
@@ -153,31 +137,10 @@ file_path: Path to the STL file.
 
 Returns: A dictionary where keys are view names ("front", "back", "left", "right", or "error") and values are either io.BytesIO containing the image data, None if rendering that view failed, or a string if an error occurred.
 
-Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
 
-License
+## License
 
-This project is licensed under the MIT License - see the LICENSE file for details (you would need to create a LICENSE file and include the MIT license text).
-
-Key improvements and explanations in this README:
-
-*   **Clear Installation Instructions:**  Provides clear instructions on how to install the package, including necessary dependencies and any platform-specific setup (like EGL for Linux).  Crucially, it includes instructions for common installation errors, like missing EGL or OSMesa dependencies.
-*   **Comprehensive Usage Examples:**  Includes detailed examples for each function (`process_obj`, `glb_to_image`, `process_stl`), demonstrating how to use them, handle the returned data (especially the `BytesIO` objects), and save the resulting images.  The examples are self-contained and runnable.
-*   **Detailed Explanation of Return Types:** Clearly explains the return types of each function, including the meaning of `io.BytesIO`, `None`, dictionaries, and error strings.  This is essential for users to understand how to correctly use the functions and handle potential errors.
-*   **Error Handling Emphasis:**  Highlights the package's error handling capabilities and shows how to check for and handle errors in the usage examples.
-*   **API Reference:**  Provides a clear API reference section that documents each function's parameters and return values.
-*   **In-Memory Operations Explanation:**  Mentions the use of `io.BytesIO` for efficiency.
-*   **Dependencies:** States the core dependencies.
-*   **Contributing and License:**  Includes sections for contributions and licensing.
-*   **PyPI Badge:** Adds a PyPI badge (you'll need to upload your package to PyPI to get the badge to work).
-*   **Markdown Formatting:** Uses Markdown effectively for readability and structure.
-* **Example files:** It uses the file path that points to where the files are, but it's important to note that the user should update it to the path where they have the files.
-
-This improved README provides a much more complete and user-friendly guide to installing, using, and understanding the `model-to-image` package. It addresses the key areas needed for a good README and follows best practices.  It also includes important troubleshooting steps.
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
+This project is licensed under the MIT License.
